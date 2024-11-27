@@ -86,11 +86,6 @@ document.querySelector(".close-button").onclick = function() {
     document.getElementById("modal").style.display = "none"; // Fecha o modal
 }
 
-// Troca entre modo claro e escuro
-document.getElementById("theme-switch").addEventListener("change", function() {
-    document.body.classList.toggle("dark-mode");
-});
-
 // Adiciona o evento de input ao campo de busca
 document.getElementById('searchInput').addEventListener('input', filterBooks);
 
