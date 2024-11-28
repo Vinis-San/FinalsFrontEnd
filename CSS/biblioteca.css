@@ -53,6 +53,10 @@ main {
     display: flex;
     flex-direction: column;
     background: linear-gradient(45deg, #1DA1F2, #2795D9);
+    background-image: radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+
 }
 
 .containerinput {
@@ -102,7 +106,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
     padding: 10px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -111,20 +114,32 @@ main {
 /* Estilo do Card */
 .ag-courses_item {
     display: flex;
-    background-color: #035486; /* Cor de fundo inicial */
-    border-radius: 20px;
-    padding: 15px;
     width: 250px;
     text-align: center;
-    transition: transform 0.3s, background-color 0.3s;
     align-items: center;
     justify-content: center;
+    color: white;
+    background: linear-gradient(45deg, #229eeb, #1e85c5);
+    border-radius:0px 40px 0px 40px ;
+    margin: 20px;
+    padding: 20px;
+    font-size: 30px;
+    transition: 0.5s;
 }
 
 /* Quando passar o mouse no card, muda a cor do fundo */
 .ag-courses_item:hover {
-    transform: scale(1.05); /* Efeito de aumento */
-    background-color: white; /* Cor de fundo durante o hover */
+    display: flex;
+    width: 250px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius:40px 0px 40px 0px ;
+    margin: 20px;
+    padding: 20px;
+    font-size: 30px;
+    transition: 0.5s;
 }
 
 /* Estilo do Link/Texto dentro do Card */
