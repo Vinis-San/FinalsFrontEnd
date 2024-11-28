@@ -8,12 +8,12 @@ let questions = [
     {
         question: "Quem criou a linguagem de programação Java?",
         options: ["James Gosling", "Dennis Ritchie", "Bjarne Stroustrup", "Guido van Rossum"],
-        correctAnswer: 0
+        correctAnswer: 1
     },
     {
         question: "O que é um 'bug' no contexto de programação?",
         options: ["Erro no código", "Novo recurso", "Tipo de computador", "Nada disso"],
-        correctAnswer: 0
+        correctAnswer: 1
     },  
     {
         question: "Qual é a linguagem de programação mais popular no mundo?",
@@ -23,12 +23,12 @@ let questions = [
     {
         question: "Qual é a linguagem de programação mais utilizada para criação de jogos?",
         options: ["Python", "JavaScript", "C++", "Java"],
-        correctAnswer: 1
+        correctAnswer: 3
     },
     {
         question: "Qual é a linguagem de programação mais utilizada para criação de aplicativos móveis?",
         options: ["Python", "JavaScript", "C++", "Java"],
-        correctAnswer: 1
+        correctAnswer: 4
     },
     {
         question: "Qual é a linguagem de programação mais utilizada para criação de sites?",

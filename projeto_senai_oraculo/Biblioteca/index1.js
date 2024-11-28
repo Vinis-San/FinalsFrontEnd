@@ -10,27 +10,28 @@ async function fetchBooks() {
         bookListContainer.innerHTML = ""; // Limpa o conteúdo anterior
 
         data.forEach(folder => {
-            if (folder.type === "dir") {
-                const folderCard = document.createElement("div");
-                folderCard.classList.add("ag-courses_item");
+    if (folder.type === "dir") {
+        const folderCard = document.createElement("div");
+        folderCard.classList.add("ag-courses_item");
+    
+        // Link que envolve todo o card
+        const folderLink = document.createElement("a");
+        folderLink.href = "#"; // Coloque a URL ou lógica para abrir a pasta aqui
+        folderLink.classList.add("ag-courses-item_link");
         
-                // Link que envolve todo o card
-                const folderLink = document.createElement("a");
-                folderLink.href = "#"; // Coloque a URL ou lógica para abrir a pasta aqui
-                folderLink.classList.add("ag-courses-item_link");
-                
-                // Adiciona o nome da pasta como conteúdo do link
-                folderLink.textContent = folder.name;
-        
-                folderCard.appendChild(folderLink);
-                bookListContainer.appendChild(folderCard);
-        
-                // Adiciona o evento de clique no link
-                folderLink.addEventListener("click", function() {
-                    showBooks(folder.path); // Chama a função showBooks
-                });
-            }
+        // Adiciona o nome da pasta como conteúdo do link
+        folderLink.textContent = folder.name;
+    
+        folderCard.appendChild(folderLink);
+        bookListContainer.appendChild(folderCard);
+    
+        // Adiciona o evento de clique no link
+        folderLink.addEventListener("click", function() {
+            showBooks(folder.path); // Chama a função showBooks
         });
+    }
+});
+
     } catch (error) {
         console.error("Erro ao carregar pastas:", error);
     }
