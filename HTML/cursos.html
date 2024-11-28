@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz de TI</title>
-    <link rel="stylesheet" href="/CSS/cursos.css">
+    <link rel="stylesheet" href="/cursos.css">
 </head>
 
 <body>
@@ -31,27 +31,36 @@
             </div>
 
             <div class="options-container">
-                <button class="option-btn" onclick="checkAnswer(1)">Windows</button>
-                <button class="option-btn" onclick="checkAnswer(2)">Linux</button>
-                <button class="option-btn" onclick="checkAnswer(3)">MacOS</button>
-                <button class="option-btn" onclick="checkAnswer(4)">Android</button>
+                <button class="option-btn" onclick="checkAnswer(0)">Windows</button>
+                <button class="option-btn" onclick="checkAnswer(1)">Linux</button>
+                <button class="option-btn" onclick="checkAnswer(2)">MacOS</button>
+                <button class="option-btn" onclick="checkAnswer(3)">Android</button>
             </div>
         </div>
 
-        <div id="result" class="result">
+        <!-- Seção de resultado -->
+        <div id="result" class="result" style="display: none;">
             <p id="result-text"></p>
-            <button onclick="nextQuestion()">Próxima Pergunta</button>
+            <button onclick="nextQuestion()">Próxima Pergunta</button> <!-- Isso será escondido após o final -->
+        </div>
+
+        <!-- Seção de finalização -->
+        <div id="finalResult" class="final-result" style="display: none;">
+            <h2>Parabéns, você completou o quiz!</h2>
+            <p class="ponto" id="final-score"></p>
+            <button onclick="restartQuiz()">Reiniciar Quiz</button> <!-- Botão para reiniciar -->
         </div>
     </main>
+
     <footer>
         <div class="containerleft"><a href="/HTML/index.html">Todos os Direitos Reservados</a></div>
         <div class="containerright">
             <h4>Quem Somos?</h4>
-            <p>Somos um Grupo de Aprendizes em TI, atualmente estamos a Serviço da Brasal Refrigerantes, mas também
-                fazemos Freela, Somos Willian Roscoe, Rudson Martins e Vinícius Andrade</p>
+            <p>Somos um Grupo de Aprendizes em TI, atualmente estamos a Serviço da Brasal Refrigerantes, mas também fazemos Freela, Somos Willian Roscoe, Rudson Martins e Vinícius Andrade</p>
         </div>
     </footer>
-    <script src="/JavaScript/cursos.js"></script>
+
+    <script src="/cursos.js"></script>
 </body>
 
 </html>

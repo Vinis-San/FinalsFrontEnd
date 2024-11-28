@@ -1,9 +1,12 @@
 let currentQuestion = 0;  // Número da pergunta atual
+let score = 0;  // Pontuação do aluno
+
 let questions = [
+    // Perguntas do quiz
     {
         question: "Qual é o sistema operacional mais utilizado no mundo?",
         options: ["Windows", "Linux", "MacOS", "Android"],
-        correctAnswer: 1
+        correctAnswer: 0
     },
     {
         question: "Quem criou a linguagem de programação Java?",
@@ -18,31 +21,31 @@ let questions = [
     {
         question: "Qual é a linguagem de programação mais popular no mundo?",
         options: ["Python", "JavaScript", "C++", "Java"],
-        correctAnswer: 1
+        correctAnswer: 0
     },
     {
         question: "Qual é a linguagem de programação mais utilizada para criação de jogos?",
         options: ["Python", "JavaScript", "C++", "Java"],
-        correctAnswer: 1
+        correctAnswer: 2
     },
     {
         question: "Qual é a linguagem de programação mais utilizada para criação de aplicativos móveis?",
         options: ["Python", "JavaScript", "C++", "Java"],
-        correctAnswer: 1
+        correctAnswer: 3
     },
     {
         question: "Qual é a linguagem de programação mais utilizada para criação de sites?",
         options: ["Python", "JavaScript", "C++", "Java"],
-        correctAnswer: 2
+        correctAnswer: 1
     },
     {
-        question: "Qual é a de TI que mais cresce no mundo ?",
-        options: ["Desenvolvimento","cybersecurity","Arquitetura","Testes"],
-        correctAnswer: 2
+        question: "Qual é a de TI que mais cresce no mundo?",
+        options: ["Desenvolvimento", "Cybersecurity", "Arquitetura", "Testes"],
+        correctAnswer: 1
     },
-
 ];
 
+// Função para carregar a pergunta
 function loadQuestion() {
     const question = questions[currentQuestion];
     document.getElementById("question").textContent = question.question;
@@ -51,31 +54,54 @@ function loadQuestion() {
         buttons[index].textContent = option;
     });
     document.getElementById("result").style.display = "none";
+    document.getElementById("finalResult").style.display = "none";
     document.getElementById("quiz").style.display = "block";
 }
+
 
 function checkAnswer(selectedAnswer) {
     const question = questions[currentQuestion];
     const isCorrect = selectedAnswer === question.correctAnswer;
-    const resultText = document.getElementById("result-text");
 
+ 
     if (isCorrect) {
-        resultText.textContent = "Resposta correta!";
-    } else {
-        resultText.textContent = "Resposta errada! Tente novamente!";
+        score++;
     }
 
+    
     document.getElementById("result").style.display = "block";
     document.getElementById("quiz").style.display = "none";
+
+    
+    if (currentQuestion === questions.length - 1) {
+        showFinalResult();
+    }
 }
+
 
 function nextQuestion() {
     currentQuestion++;
     if (currentQuestion < questions.length) {
         loadQuestion();
     } else {
-        document.getElementById("quiz").innerHTML = "<h2>Parabéns, você completou o quiz!</h2>";
+        showFinalResult();
     }
 }
 
-loadQuestion();  // Carregar a primeira pergunta
+
+function showFinalResult() {
+    document.getElementById("finalResult").style.display = "block";
+    document.getElementById("final-score").textContent = `Sua pontuação final é: ${score} de ${questions.length}`;
+    document.getElementById("result").style.display = "none"; // Escondendo a seção de resultado
+    document.getElementById("quiz").style.display = "none";  // Escondendo a seção de perguntas
+}
+
+
+function restartQuiz() {
+    score = 0;
+    currentQuestion = 0;
+    loadQuestion();
+}
+
+// Carregar a primeira pergunta
+loadQuestion();
