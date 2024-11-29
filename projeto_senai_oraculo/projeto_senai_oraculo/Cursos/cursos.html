@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de TI</title>
+    <link rel="stylesheet" href="/Cursos/cursos.css"> <!-- O arquivo de CSS -->
+</head>
+<body>
+
+<header>
+    <img src="/Imagens/logo Oráculo copy.png" alt="oraculo"> 
+    <h1 id="text1">Quiz de Tecnologia da Informação</h1>
+    <div class="containerlinks">
+        <nav>
+            <ul>
+            <li><a href="/Home/Home.html">Home</a></li>
+            <li><a href="/Biblioteca/Biblioteca.html">Biblioteca</a></li>
+            <li><a href="/Cursos/cursos.html">Quiz</a></li>
+            <li><a href="/Sobre/sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+</header>
+
+<main class="quiz-container">
+    <div id="quiz">
+        <div class="question-container">
+            <p id="question">Qual é o sistema operacional mais utilizado no mundo?</p>
+        </div>
+
+        <div class="options-container">
+            <button class="option-btn" onclick="checkAnswer(1)">Windows</button>
+            <button class="option-btn" onclick="checkAnswer(2)">Linux</button>
+            <button class="option-btn" onclick="checkAnswer(3)">MacOS</button>
+            <button class="option-btn" onclick="checkAnswer(4)">Android</button>
+        </div>
+    </div>
+
+    <div id="result" class="result">
+        <p id="result-text"></p>
+        <button onclick="nextQuestion()">Próxima Pergunta</button>
+    </div>
+</main>
+
+<script src="/Cursos/cursos.js"></script> <!-- O arquivo de JS -->
+</body>
+</html>
